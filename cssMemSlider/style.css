@@ -42,7 +42,7 @@ input {
 
 .slider {
     max-width: 80rem;
-    margin: 6rem auto 0;
+    margin: 5rem auto 0;
     overflow: hidden;
     text-align: center;
     padding: rem;
@@ -80,7 +80,7 @@ input {
     margin: -2rem auto 0;
 }
 
-.pagination label span{
+.pagination label span {
     transition: 0.5s;
 }
 
@@ -96,7 +96,7 @@ input {
     cursor: pointer;
 }
 
-.pagination label:hover > span{
+.pagination label:hover>span {
     background: #575268;
     border: 2px solid #575268;
 }
@@ -125,13 +125,28 @@ input {
     display: block;
 }
 
-@media(max-width: 768px) {
-    .pagination {
-        margin-top: -3em;
-        justify-content: center;
+@media(max-width: 750px) {
+
+    #first_slide:checked~.slider .slider_slide:nth-child(1),
+    #second_slide:checked~.slider .slider_slide:nth-child(2),
+    #third_slide:checked~.slider .slider_slide:nth-child(3),
+    #fourth_slide:checked~.slider .slider_slide:nth-child(4) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .slide_description {
-        margin-top: 3em;
+    .slider{
+        margin: 1rem 1rem 0rem 1rem;
+    }
+     .slide_description {
+        margin-top: 1em;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .pagination {
+        justify-content: center;
+        margin-top: 2.5rem;
     }
 }
