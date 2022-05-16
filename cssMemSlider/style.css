@@ -1,15 +1,28 @@
 * {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 html {
-    font-size: 10px;
+    font-size: 9px;
 }
 
 body {
     background: #1E1E2E;
-    font-family: 'Segoe UI', Roboto, 'Open Sans', sans-serif;
+}
+
+input {
+    display: none;
+}
+
+@keyframes reverse-fader {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes fader {
@@ -28,12 +41,11 @@ body {
 }
 
 .slider {
-    max-width: 800px;
-    margin: 6em auto 0;
-    white-space: nowrap;
+    max-width: 80rem;
+    margin: 6rem auto 0;
     overflow: hidden;
     text-align: center;
-    padding: 0px;
+    padding: rem;
 }
 
 .slider_slide {
@@ -51,7 +63,7 @@ body {
 
 .slide_image {
     max-width: 120rem;
-    height: auto;
+    border-radius: 2.5rem;
     overflow: hidden;
 }
 
@@ -60,45 +72,42 @@ body {
     height: 100%;
 }
 
-input {
-    display: none;
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 80rem;
+    height: 2rem;
+    margin: -2rem auto 0;
 }
 
-label {
-    width: 2em;
-    height: 2em;
+.pagination label span{
+    transition: 0.5s;
+}
+
+.pagination label {
+    width: 2rem;
+    height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-label:hover {
+.pagination label:hover {
     cursor: pointer;
 }
 
-label:hover > span{
-    background-color: #C9CBFF;
-    border: none;
+.pagination label:hover > span{
+    background: #575268;
+    border: 2px solid #575268;
 }
 
-label span {
+.pagination label span {
     display: block;
-    width: 1em;
-    height: 1em;
+    width: 1rem;
+    height: 1rem;
     background-color: #C9CBFF;
     border: 2px solid #C9CBFF;
     border-radius: 100%;
-    transition: 0.5s;
-}
-
-.pagination {
-    max-width: 80rem;
-    margin: -2em auto 0;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.pagination label span{
     transition: 0.5s;
 }
 
@@ -109,10 +118,10 @@ label span {
     background: #1E1E2E;
 }
 
-#first_slide:checked~.slider div:nth-child(1),
-#second_slide:checked~.slider div:nth-child(2),
-#third_slide:checked~.slider div:nth-child(3),
-#fourth_slide:checked~.slider div:nth-child(4) {
+#first_slide:checked~.slider .slider_slide:nth-child(1),
+#second_slide:checked~.slider .slider_slide:nth-child(2),
+#third_slide:checked~.slider .slider_slide:nth-child(3),
+#fourth_slide:checked~.slider .slider_slide:nth-child(4) {
     display: block;
 }
 
